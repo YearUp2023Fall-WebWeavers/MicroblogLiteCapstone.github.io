@@ -1,7 +1,7 @@
 "use strict";
 
 const fullNameInput = document.getElementById('fullName');
-const userNameInput = document.getElementById('username');
+const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const bioTextInput = document.getElementById('bioText');
 const newUserBtn = document.getElementById('newUser');
@@ -14,12 +14,13 @@ function init() {
 
 function newUserBtnClicked() {
     const newUserData = {
+        
+        username: usernameInput.value,
         fullName: fullNameInput.value,
-        username: userNameInput.value,
         password: passwordInput.value,
-        bioText: bioTextInput.value
+       
     };
-
+ //bioText: bioTextInput.value
     // Make a request to the server to register the new user
     fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/users", {
         method: "POST",
